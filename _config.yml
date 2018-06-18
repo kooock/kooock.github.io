@@ -1,1 +1,9 @@
+#page setting
+title: 망상코더의 망상노트
+description: "mangsang blog, build with Jekyll."
 theme: jekyll-theme-hacker
+author:
+  name: "망상코더"
+  email: "koock1994@gmail.com"
+  url: "https://kooock.github.io/"
+  
