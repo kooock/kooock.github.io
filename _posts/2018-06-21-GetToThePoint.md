@@ -1,13 +1,13 @@
 ---
 layout: post
 title: 논문 <Get To The Point : Summarization with Pointer-Generator Network> 변역 
-header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 excerpt: "Just about everything you'll need to style in the theme: headings, paragraphs, blockquotes, tables, code blocks, and more."
 modified: 2018-06-21
 tags: [딥러닝, 논문, 번역, 요약]
 comments: true
 ---
 
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 ### Get To The Point : Summarization with Pointer-Generator Network 번역
 
