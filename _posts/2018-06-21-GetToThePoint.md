@@ -101,5 +101,5 @@ Pointer-generator network 모델(그림 3에서 묘사된)에서 attention distr
 $$P_{gen} = \boldsymbol{\sigma}(w_{h^{\ast}}^{T}h_{t}^{\ast} + w_{s}^{T}s_{t} + w_{s}^{T}x_{t} + b_{ptr})$$
 
 
-vector들 $$w_{h^{\ast}}$$,$$$$
+vector들 $$w_{h^{\ast}}$$,$$w_{s}$$,$$w_{x}
 
