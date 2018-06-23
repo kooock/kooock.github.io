@@ -1,6 +1,8 @@
 ---
 layout: post
 title: 논문 <Get To The Point : Summarization with Pointer-Generator Network> 변역 
+header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+출처: http://dataleaf.tistory.com/entry/Markdown에서-수식-입력하기 [정보의 잎사귀]
 excerpt: "Just about everything you'll need to style in the theme: headings, paragraphs, blockquotes, tables, code blocks, and more."
 modified: 2018-06-21
 tags: [딥러닝, 논문, 번역, 요약]
