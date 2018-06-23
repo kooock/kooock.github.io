@@ -7,8 +7,6 @@ tags: [딥러닝, 논문, 번역, 요약]
 comments: true
 ---
 
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
 ### Get To The Point : Summarization with Pointer-Generator Network 번역
 
 -----------------------------------------------------------------------------------------------
