@@ -8,7 +8,6 @@ comments: true
 ---
 
 ### Get To The Point : Summarization with Pointer-Generator Network 번역
-
 -----------------------------------------------------------------------------------------------
 
 | Abigail See         | Peter J. Liu         | Christopher D. Manning | 
