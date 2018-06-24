@@ -115,4 +115,36 @@ OOV 단어들을 생성할 수 있는 능력은 우리의 기초seq2seq모델과
 손실함수는 (6)과 (7)의 방정식으로 표현되는 거 같아 보아지만, 방정식 (9)에서 주어진 우리의 수정된 확률분포 $$P(w)$$와 관련있다.
 
 ##### 2.3. Coverage mechanism
-반복은 seq2seq 모델들(Tu et al., 2016; Mi et al.,2016; Sankaran et al., 2016; Suzuki and Nagata,2016)에서 일반적으로 발생되는 문제이며, 특히 다문장의 두드러진다.
+반복은 seq2seq 모델들(Tu et al., 2016; Mi et al.,2016; Sankaran et al., 2016; Suzuki and Nagata,2016)에서 일반적으로 발생되는 문제이며, 특히 다문장의 글을 생성할 때 두드러진다(그림 1 참조).
+우리는 이 문제를 해결하기 위해 Tu et al. (2016)의 coverage model을 도입했다. 
+우리의 coverage model에서 모든 이전 decoder의 타임스텝에서의 atttention분포들의 합인 coverage vector $$c^{t}를 유지한다.
+
+
+$$c^{t}=\sum_{t'=0}^{t-1} a^{t'}$$                                                                                  (10)
+
+
+직관적으로, $$c^{t}$$는 원문 단어들에 대해 그 단어들을 attention 메커니즘으로부터 지금까지 뽑아낸 coverage의 등급으로 보여주는 (정규화 되지 않은)분포이다.
+$$c^{0}$$는 첫번째 타임스텝이기 때문에 커버된 것이 없으므로 영벡터로 취급한다.
+coverage vector는 attention 매커니즘으로 입력하는 추가적 입력값으로 사용되고 방정식 (1)을 아래의 식으로 변경한다.
+
+
+$$e_{i}^{t} = v^{T} tanh(W_{h}h_{i} + W_{s}s_{t} + w_{c}c_{i}^{t} + b_{attn})$$                                     (11)
+
+
+$$w_{c}$$는 $$v$$와 같은 길이의 학습가능한 파라미터 벡터이다.
+attention 매커니즘의 현재 의사결정(다음 주의할 곳을 고르는)은 어전 의사결정들($$c^{t}$$에서 요약된)의 리마인더에 의해 정보를 전달 받는다.
+이것은 attention메커니즘이 반복적으로 같은 부분을 주의하는 것과 반복적인 text를 반복하는 것을 피하기 더욱 쉽게 만들어준다.
+우리는 이것이 같은 장소를 반복해서 주의할 경우 패널티를 주게되는 coverage loss를 덧붙여 정의하는 것이 필요하다는 것을 발견했다.
+
+
+$$covloss_{t} = \sum_{i} min(a_{i}^{t},c_{i}^{t})$$                                                                  (12)
+
+
+coverage 손실함수는 $$covloss_{t} \leq \sum_{i} a_{i}^{t} = 1$$로 경계를 설정한다.
+방정식(12)는 기계번역에서 사용하는 coverage 손실함수와 다르다.
+기계번역에서는 대략 1대1 번역이 된다고 추측할 수 있다. 그에 따라 최종 coverage 벡터는 1보다 크거나 작으면 패널티를 받게된다.
+우리의 손실함수는 더욱 유연하다. 요약이 다 동일한 coverage을 요구하지 않기 때문에 우리는 오직 각 attenation 분포와 attention의 반복을 막기위한 coverage가 오버랩될때만 패널티를 준다.
+끝으로 하이퍼파라미터 $$\lambda$$에 의해 재조정되는 coverage 손실함수는 새로운 합성 손실함수인 primary 손실함수에 더해진다.
+
+
+$$loss_{t} = -log P(w_{t}^{\ast}) + \lambda \sum_{i} min(a_{i}^{t},c_{i}^{t})$$                                      (13)
