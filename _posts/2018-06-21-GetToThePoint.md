@@ -56,50 +56,63 @@ comments: true
 attention distribution $$a_t$$는 Bahdanau et al. (2015)에서와 같이 계산되어진다.
 
 
-$$a_{i}^{t} = v^{T}tanh(W_{t}h{i} + W_{s}s_{t} + b_{attn})$$      (1)
-$$a^{t} = softmax(e^{t})$$                                        (2)
+$$a_{i}^{t} = v^{T}tanh(W_{t}h{i} + W_{s}s_{t} + b_{attn})$$                                                        (1)
+$$a^{t} = softmax(e^{t})$$                                                                                          (2)
 
 
 $$v$$에서 $$W_h$$, $$W_{s}$$와 $$b_{attn}$$는 학습가능한 파라미터들이다.
-attention distribution은  다음 단어를 만들어 낼 곳을 디코더에게 알려주는 원문 단어들의 확률분산으로 볼 수 있다.
+attention distribution은  다음 단어를 만들어 낼 곳을 디코더에게 알려주는 원문 단어들의 확률분포로 볼 수 있다.
 다음으로, attention distribution은 context vector $$h_{t}^{\ast}$$로 알려진 인코더 히든 state들의 가중치 합의 결과로 다뤄진다.
 
 
-$$h_{t}^{\ast} = \sum_{i} a_{i}^{t}h_{i}$$                           (3)
+$$h_{t}^{\ast} = \sum_{i} a_{i}^{t}h_{i}$$                                                                          (3)
 
 
 이 단계에서 원문에서 읽은 것을 고정된 사이즈로 표시한다고 볼 수 있는 context vector $$e$$는 디코드 state $$s_{t}$$와 연결되고 vocabulary distribution을 만들어내는 두층짜리 linear layer로부터 입력받는다.
 
 
-$$P_{vocab} = softmax(V'(V[s_{t},h_{t}^{\ast}]+b)+b')$$              (4)
+$$P_{vocab} = softmax(V'(V[s_{t},h_{t}^{\ast}]+b)+b')$$                                                             (4)
 
 
 $$V$$,$$V'$$,$$b$$와 $$b'$$는 학습가능한 파라미터들이다.
-$$P_{vocab}$$은 vocabulary의 모든 단어의 확률 분산이며 예측한 단어들 $$w$$의 최종적인 분산을 내타낸다.
+$$P_{vocab}$$은 vocabulary의 모든 단어의 확률분포이며 예측한 단어들 $$w$$의 최종적인 분포을 내타낸다.
 
 
-$$P(w) = P_{vocab}(w)$$                                           (5)
+$$P(w) = P_{vocab}(w)$$                                                                                             (5)
 
 학습하는 동안 타임스텝 $$t$$ 에서의 손실함수는 해당 타임스텝에서의 타겟 단어 $$w_{t}^{\ast}$$의 음의 log likelyhood이다.
 
 
-$$loss_{t} = -log P(w_{t}^{\ast})$$                                     (6)
+$$loss_{t} = -log P(w_{t}^{\ast})$$                                                                                 (6)
 
 
 그리고 전체 시퀀스에서의 통합 손실함수는 다음과 같다.
 
 
-$$loss = \frac{1}{T}\sum_{t=0}^{T} loss_{t}$$                     (7)
+$$loss = \frac{1}{T}\sum_{t=0}^{T} loss_{t}$$                                                                       (7)
 
 
 ##### 2.2. Pointer-generator network
 우리의 pointer-generator network는 pointing에 의해 단어를 복사하고 고정된 vocabulary로부터 단어를 생성하기 위해 우리의 기초 seq2seq모델과 pointer network(Vinyals et al.,2015)의 하이브리드 형태이다.
 Pointer-generator network 모델(그림 3에서 묘사된)에서 attention distribution $$a^{t}$$와 context vector $$h_{t}^{\ast}$$는 색션 2.1.과 같이 계산되어진다. 
-덧붙히자면, 타임스텝 $$t$$에서의 generation probability P_{gen} \in [0,1])은 context vector $$h_{t}^{\ast}$$, 디코더 state $$s_{t}$$와 디코더 입력값 $$s_{t}$$으로부터 계산되어진다.
+덧붙히자면, 타임스텝 $$t$$에서의 generation probability $$p_{gen} \in [0,1]$$은 context vector $$h_{t}^{\ast}$$, 디코더 state $$s_{t}$$와 디코더 입력값 $$s_{t}$$으로부터 계산되어진다.
 
 
-$$P_{gen} = \boldsymbol{\sigma}(w_{h^{\ast}}^{T}h_{t}^{\ast} + w_{s}^{T}s_{t} + w_{s}^{T}x_{t} + b_{ptr})$$
+$$p_{gen} = \boldsymbol{\sigma}(w_{h^{\ast}}^{T}h_{t}^{\ast} + w_{s}^{T}s_{t} + w_{s}^{T}x_{t} + b_{ptr})$$         (8)
 
 
-vector들 $$w_{h^{\ast}}$$,$$w_{s}$$,$$w_{x}
+vector들 $$w_{h^{\ast}}$$에서 $$w_{s}$$,$$w_{x}과 스칼라 $$b_ptr$$는 학습가능한 파라미터이다. 그리고 \boldsymbol{\sigma}는 sigmoid함수이다.
+다음으로 $$p_{gen}는 vocabulary로부터 $$P_{vocab}$$의 샘플링에 의해 단어를 generating하는 것 또는 입력 sequence로부터 attention 분포 $$a^{t)의 샘플링에 의해 단어를 copying하는 것 둘 중에 하나를 고르는 소프트 스위치로 사용되어진다.
+각 문서에서 extended vocabulary가 vocabulary과 원문서에 있는 모든 단어들의 결합을 나타날 수 있도록 한다.
+extended vocabulary에서 아래의 확률분포를 획득한다.
 
+
+$$P(w) =  p_{gen}P_{vocab}(w) + (1-p_{gen}) \sum_{i:w_{i}=w} a_{i}^{t}$$                                            (9)
+
+
+$$w$$는 out-of-vocabulary(OOV) 단어일때 $$P_{vocab}(w)$$는 0으로 기록하고 마찬가지로 $$w$$가 원문서에서 보이지 않는다면 $$\sum_{i:w_{i}=w} a_{i}^{t}$$를 0으로 기록한다.
+OOV 단어들을 생성할 수 있는 능력은 우리의 기초seq2seq모델과 같은 미리 정해져 있는 vocabulary에 재한된 모델들과 비교했을 때 pointer-generator모델의 가장 중요한 장점이다.
+손실함수는 (6)과 (7)의 방정식으로 표현되는 거 같아 보아지만, 방정식 (9)에서 주어진 우리의 수정된 확률분포 $$P(w)$$와 관련있다.
+
+##### 2.3. Coverage mechanism
+반복은 seq2seq 모델들(Tu et al., 2016; Mi et al.,2016; Sankaran et al., 2016; Suzuki and Nagata,2016)에서 일반적으로 발생되는 문제이며, 특히 다문장의 두드러진다.
