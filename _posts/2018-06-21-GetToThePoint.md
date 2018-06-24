@@ -117,7 +117,7 @@ OOV 단어들을 생성할 수 있는 능력은 우리의 기초seq2seq모델과
 ##### 2.3. Coverage mechanism
 반복은 seq2seq 모델들(Tu et al., 2016; Mi et al.,2016; Sankaran et al., 2016; Suzuki and Nagata,2016)에서 일반적으로 발생되는 문제이며, 특히 다문장의 글을 생성할 때 두드러진다(그림 1 참조).
 우리는 이 문제를 해결하기 위해 Tu et al. (2016)의 coverage model을 도입했다. 
-우리의 coverage model에서 모든 이전 decoder의 타임스텝에서의 atttention분포들의 합인 coverage vector $$c^{t}를 유지한다.
+우리의 coverage model에서 모든 이전 decoder의 타임스텝에서의 atttention분포들의 합인 coverage vector $$c^{t}$$를 유지한다.
 
 
 $$c^{t}=\sum_{t'=0}^{t-1} a^{t'}$$                                                                                  (10)
