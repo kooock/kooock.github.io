@@ -101,7 +101,7 @@ Pointer-generator network 모델(그림 3에서 묘사된)에서 attention distr
 $$p_{gen} = \boldsymbol{\sigma}(w_{h^{\ast}}^{T}h_{t}^{\ast} + w_{s}^{T}s_{t} + w_{s}^{T}x_{t} + b_{ptr})$$         (8)
 
 
-vector들 $$w_{h^{\ast}}$$에서 $$w_{s}$$,$$w_{x}$$과 스칼라 $$b_ptr$$는 학습가능한 파라미터이다. 그리고 $$\boldsymbol{\sigma}$$는 sigmoid함수이다.
+vector들 $$w_{h^{\ast}}$$에서 $$w_{s}$$,$$w_{x}$$과 스칼라 $$b_{ptr}$$는 학습가능한 파라미터이다. 그리고 $$\boldsymbol{\sigma}$$는 sigmoid함수이다.
 다음으로 $$p_{gen}$$는 vocabulary로부터 $$P_{vocab}$$의 샘플링에 의해 단어를 generating하는 것 또는 입력 sequence로부터 attention 분포 $$a^{t)$$의 샘플링에 의해 단어를 copying하는 것 둘 중에 하나를 고르는 소프트 스위치로 사용되어진다.
 각 문서에서 extended vocabulary가 vocabulary과 원문서에 있는 모든 단어들의 결합을 나타날 수 있도록 한다.
 extended vocabulary에서 아래의 확률분포를 획득한다.
