@@ -6,7 +6,6 @@ modified: 2018-07-19
 comments: true
 category : Finance-Engineering
 tags: [금융공학, 퀀트]
-comments: true
 ---
 
 
