@@ -7,7 +7,12 @@ layout: default
 
 <p class="view">by {{ page.author | default: site.author }}</p>
 
+
 {{content}}
+<script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
 
 {% if page.tags %}
   <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
