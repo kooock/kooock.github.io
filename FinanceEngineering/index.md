@@ -3,8 +3,8 @@ layout: default
 ---
 
 <ul id="post-list">
-    {\% for post in site.categories.카테고리이름 \%}
-        {\% include 리스트레이아웃.html \%}
-    {\% endfor \%}
+    {% for post in site.categories.FinanceEngineering %}
+       <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
 </ul>
-{\% include pagination.html \%}
+{% include pagination.html %}
