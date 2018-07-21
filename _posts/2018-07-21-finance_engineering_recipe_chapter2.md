@@ -32,7 +32,7 @@ time value of money의 매개는 이자
 
 수식으로 나타내면 $$10000 \times (1 + 0.1)$$이므로 
 
-즉, $$FV = PV \times (1 + 0.1)$$ 가 된다.
+즉, $$FV = {PV} \times (1 + 0.1)$$ 가 된다.
 
 #### 2.2 PV(Present Value) 계산
 
