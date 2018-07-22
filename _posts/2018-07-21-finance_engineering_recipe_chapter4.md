@@ -53,10 +53,55 @@ Analyst가 사용하는 valuation model : DOM, Gordon의 성장모형, CAPM, FV/
 
 finance engineering valuation : Quant traing 분야 => 유사한 다수 종목의 주가를 관찰해 주가를 형성하는 규칙을 발견하여 적정 주가 예측 => 통계학에 뿌리
 
+##### 주가 비교의 첫걸음 : 비교 대상의 표준화
 
+삼성전자와 주가비교를 위해 반도체라는 공통점이 있는 SK하이닉스와 전자라는 공통점이 있는 LG전자로 비교
 
+먼저 하이닉스 그래프 
 
+![useful image]({{ site.url }}/assets/images/hynix_stock_graph.png)
 
-##### 
+LG전자 그래프
+
+![useful image]({{ site.url }}/assets/images/lg_electronic_stock_graph.png)
+
+삼성과 하이닉스 LG중 수익률이 가장 높은 종목은? ~~어차피 난 셋다 없어 ㅠㅠ~~
+
+따로 따로 보면 눈대중으로 파악이 힘들어진다.
+
+그래서 삼성 하이닉스 LG의 그래프를 겹쳐보자
+
+![useful image]({{ site.url }}/assets/images/samsung_lg_hynix_graph.png)
+
+주가 수준이 다르므로 lg와 하이닉스는 오르는지 내리는지 알수가 없다. 
+
+비율로 기준을 맞춰야 한다. => indexing(지수화)
+
+$$Price_Index = {Price_{i} \over Price_{0}} \times Standard_Price$$
+
+ex ) 기준일 : 2016년 1월 4일 / 기준가 : 100
+
+| 일자 | SK하이닉스 | 삼성전자 | LG전자 |
+| :---: | :---: | :---: | :---: |
+| 2015-12-30 | 30,346 | 1,232,071 | 53,377 |
+| 2016-01-04 | 29,754 | 1,178,290 | 52,087 |
+| 2016-01-06 | 30,196 | 1,181,224 | 53,873 |
+
+ 1월 4일 종가기준으로 1월 5일의 index는 $$Price_Index = {Price_{i} \over Price_{0}} \times Standard_Price = {1,181,224 \over 1,178,290} \times 100 = 100.25$$
+
+이 개념은 주가지수 산출, 편드 가격 산정 등에 동일하게 적용
+
+이런식으로 indexing을 하면 그래프는
+
+![useful image]({{ site.url }}/assets/images/samsung_lg_hynix_index.png)
+
+상승률 
+
+SK하이닉스 : 250%
+삼성전자 : 210%
+LG전자 : 200%
+
+하이닉스가 가장 높은 상승률을 보인 것을 알 수 있다.
+
  
 
