@@ -19,7 +19,7 @@ tags: [금융공학, 퀀트]
 
 ##### 주식가격은 기업의 과거, 현재, 미래를 반영
 
-![useful image]({{ site.url }}/assets/samsung_stock_2016_6to2017_10.png)
+![useful image]({{ site.url }}/assets/images/samsung_stock_2016_6to2017_10.png)
 
 2017년 마자막 날 삼성전자의 주가는 254만 8000원
 
@@ -28,4 +28,6 @@ tags: [금융공학, 퀀트]
 이런 답을 찾기 위해 기본적 / 기술적 분석 등 다양한 분석을 한다.
 
 Analyst : 기업 실사, 미래 전망, 경쟁사 분석, CEO인터뷰 등 다양한 분석을 하고, 주가 예측을 위한 valuation => 목표 주가 산정/ 분석보고서 발간
+
+##### 싸면 매수, 비싸면 매도 ~~아니 누가 모르나?~~
 
