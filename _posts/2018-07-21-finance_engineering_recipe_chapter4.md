@@ -49,6 +49,14 @@ Analyst : 경영전략, 시장 동향, 경쟁사 동향 등의 기업 활동 심
           
 \>>>> 종목마다 방법이 다름 => 만능키는 없다
 
+Analyst가 사용하는 valuation model : DOM, Gordon의 성장모형, CAPM, FV/EBITDA, PER, EPS, PBR 등
 
+finance engineering valuation : Quant traing 분야 => 유사한 다수 종목의 주가를 관찰해 주가를 형성하는 규칙을 발견하여 적정 주가 예측 => 통계학에 뿌리
+
+
+
+
+
+##### 
  
 
