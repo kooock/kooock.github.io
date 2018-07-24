@@ -73,4 +73,34 @@ $$N$$번 시행한 경우 앞면이 나올 확률이 p일때 기대값은 $$Np$$
 
 그렇다면 최상의 $$a$$는 얼마일까?
 
-만약 앞면이 나왔다면 기대수익은 $$x_{1} = 5ax_{0} + (1-a)x_{0} = $$ 
+만약 앞면이 나왔다면 기대수익은 $$\begin{matrix} x_{1} &=& 5ax_{0} + (1-a)x_{0} \\ &=& (1+4a)x_{0} \end{matrix}$$
+
+반대로 뒷면이 나왔다면 남은 자본금은 $$x_{1} = (1-a)x_{0}$$
+
+확률적으로 앞면과 뒷면이 나오는 기대값은 각각 $$N \over 2$$,$$N \over 2$$ 이다. 
+
+그렇다면 앞면만 나와서 얻게되는 금액은 $$x_{N \over 2} = (1+4a)^{N \over 2}x_{0}$$이고,
+
+뒷면만 나와서 남게되는 금액은 $$x_{N \over 2} = (1-a)^{N \over 2}x_{0}$$ 이다. 
+
+이렇다면 이 둘을 곱하면 완전하게 N번을 던졌을때의 기대수익을 구할 수 있다.(확률에서 연속시행의 확률값은 곱해야 한다.)
+
+$$x_{N} = (1+4a)^{N \over 2}(1-a)^{N \over 2}x_{0}$$
+
+여기서 소리지르면서 도망가긴 이르다. 아직 우리 $$a$$를 구하지 않았다.
+
+자 이걸 그래프로 그리면 이렇게 생겨먹었다. 
+(그래프 그리는 코드는 [이곳][graphCode]
+[graphCode]: https://github.com/kooock/kooock.github.io/blob/master/script/python/graph.py "Bernoulli graph" 
+)
+
+
+![useful image]({{ site.url }}/assets/images/brain_teaser2_graph.png)
+
+눈썰미가 있는 사람들은 벌써 눈치 깠을 것이다. 
+
+그렇다 이 그래프는 그 유멍한 이항분포인 베르누이 분포의 그것과 같다.
+
+[Bernoulli Distribution][Bernoulli]
+[Bernoulli]: https://ko.wikipedia.org/wiki/%EB%B2%A0%EB%A5%B4%EB%88%84%EC%9D%B4_%EB%B6%84%ED%8F%AC "Bernoulli Distribution" 
+
