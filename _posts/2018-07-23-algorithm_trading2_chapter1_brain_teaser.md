@@ -90,8 +90,7 @@ $$x_{N} = (1+4a)^{N \over 2}(1-a)^{N \over 2}x_{0}$$
 여기서 소리지르면서 도망가긴 이르다. 아직 우리 $$a$$를 구하지 않았다.
 
 자 이걸 그래프로 그리면 이렇게 생겨먹었다. 
-(그래프 그리는 코드는 [이곳][graphCode]
-[graphCode]: https://github.com/kooock/kooock.github.io/blob/master/script/python/graph.py "Bernoulli graph" 
+(그래프 그리는 코드는 [이곳](https://github.com/kooock/kooock.github.io/blob/master/script/python/graph.py)
 )
 
 
@@ -101,6 +100,5 @@ $$x_{N} = (1+4a)^{N \over 2}(1-a)^{N \over 2}x_{0}$$
 
 그렇다 이 그래프는 그 유멍한 이항분포인 베르누이 분포의 그것과 같다.
 
-[Bernoulli Distribution][Bernoulli]
-[Bernoulli]: https://ko.wikipedia.org/wiki/%EB%B2%A0%EB%A5%B4%EB%88%84%EC%9D%B4_%EB%B6%84%ED%8F%AC "Bernoulli Distribution" 
+[Bernoulli Distribution](https://ko.wikipedia.org/wiki/%EB%B2%A0%EB%A5%B4%EB%88%84%EC%9D%B4_%EB%B6%84%ED%8F%AC)
 
