@@ -102,3 +102,5 @@ $$x_{N} = (1+4a)^{N \over 2}(1-a)^{N \over 2}x_{0}$$
 
 [Bernoulli Distribution](https://ko.wikipedia.org/wiki/%EB%B2%A0%EB%A5%B4%EB%88%84%EC%9D%B4_%EB%B6%84%ED%8F%AC)
 
+최고점을 찾기위해 미분을 해줘야 하지만 겁나 피곤하다 내일해야지
+
