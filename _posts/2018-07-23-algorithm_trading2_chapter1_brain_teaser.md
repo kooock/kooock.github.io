@@ -107,11 +107,11 @@ $$x_{N} = (1+4a)^{N \over 2}(1-a)^{N \over 2}x_{0}$$
 
 $$\begin{matrix} {dx_{N} \over da} 
 &=& {d \over da}(1+4a)^{N \over 2}(1-a)^{N \over 2}x_{0} \\
-&=& {d \over da}((1+4a)(1-a))^{N \over 2} \\
-&=& {N \over 2}((1+4a)(1-a))^{ {N \over 2}-1}{d \over da}(1+4a)(1-a) \\
-&=& {N \over 2}((1+4a)(1-a))^{ {N \over 2}-1}((1+4a){d(1-a) \over da}+(1-a){d(1+4a) \over da}) \\
-&=& {N \over 2}((1+4a)(1-a))^{ {N \over 2}-1}(-(1+4a)+4(1-a)) \\
-&=& {N \over 2}((1+4a)(1-a))^{ {N \over 2}-1}(-8a+3)
+&=& {d \over da}((1+4a)(1-a))^{N \over 2}x_{0} \\
+&=& {N \over 2}((1+4a)(1-a))^{ {N \over 2}-1}{d \over da}(1+4a)(1-a)x_{0} \\
+&=& {N \over 2}((1+4a)(1-a))^{ {N \over 2}-1}((1+4a){d(1-a) \over da}+(1-a){d(1+4a) \over da})x_{0} \\
+&=& {N \over 2}((1+4a)(1-a))^{ {N \over 2}-1}(-(1+4a)+4(1-a))x_{0} \\
+&=& {N \over 2}((1+4a)(1-a))^{ {N \over 2}-1}(-8a+3)x_{0}
 \end{matrix}$$
 
 뭔가 아직도 복잡하다 기분탓이려니 해라 
@@ -130,4 +130,25 @@ $$\begin{matrix} {dx_{N} \over da}
 
 그렇다면 세번째 a는? 0~1사이이며, 매 배팅마다 전부 다 꼴아박~~지호~~지도 않는다. 그
 
-그렇다 우리가 그토록 찾던 배팅비율 a는 $$3/8$$인 것이다.
+그렇다 우리가 그토록 찾던 배팅비율 a는 $$3 over 8$$인 것이다.
+
+그렇다면 기대수익은 어떻게 될까? $$x_{N} = (1+4a)^{N \over 2}(1-a)^{N \over 2}x_{0}$$ 이 식에 넣어보면 나온다.
+
+$$\begin{matrix} x_{N} 
+&=& (1+(4 \times {3 \over 8}))^{N \over 2}(1-{3 \over 8})^{N \over 2}x_{0} \\
+&=& (1+{3 \over 2})^{N \over 2} \times {5 \over 8}^{N \over 2}x_{0} \\
+&=& {5 \over 2}^{N \over 2} \times {5 \over 8}^{N \over 2}x_{0} \\
+&=& ({5 \over 2} \times {5 \over 8})^{N \over 2}x_{0} \\
+&=& {25 \over 16}^{N \over 2}x_{0} \\
+&=& { {5 \over 4}^{2} }^{N \over 2}x_{0} \\ 
+&=& {5 \over 4}^{2 \times {N \over 2} }x_{0} \\
+&=& {5 \over 4}^{N}x_{0}
+\end{matrix}$$
+
+$$ 5 \over 4$$ 그러니까 125%씩 자본이 증가하는 것을 기대할 수 있다.
+
+
+
+
+
+
