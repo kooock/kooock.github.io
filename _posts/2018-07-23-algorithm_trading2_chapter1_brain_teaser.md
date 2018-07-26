@@ -140,7 +140,7 @@ $$\begin{matrix} x_{N}
 &=& {5 \over 2}^{N \over 2} \times {5 \over 8}^{N \over 2}x_{0} \\
 &=& ({5 \over 2} \times {5 \over 8})^{N \over 2}x_{0} \\
 &=& {25 \over 16}^{N \over 2}x_{0} \\
-&=& {5 \over 4}^{ {2}^{N \over 2} }x_{0} \\ 
+&=& ({5 \over 4}^{2})^{N \over 2}x_{0} \\ 
 &=& {5 \over 4}^{2 \times {N \over 2} }x_{0} \\
 &=& {5 \over 4}^{N}x_{0}
 \end{matrix}$$
