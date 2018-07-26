@@ -105,7 +105,14 @@ $$x_{N} = (1+4a)^{N \over 2}(1-a)^{N \over 2}x_{0}$$
 최고점을 찾기위해 미분을 해줘야 한다. 그리고 기울기가 0이되는 값 중 조건에 만족하는 값만 찾으면 된다.
 
 
-$$\begin{matrix} {dx_{N} \over da} &=& {d \over da}(1+4a)^{N \over 2}(1-a)^{N \over 2}x_{0} \\ &=& {d \over da}((1+4a)(1-a))^{N \over 2} \\ &=& N \over 2}((1+4a)(1-a))^{{N \over 2}-1}{d \over da}(1+4a)(1-a) \\ &=& {N \over 2}((1+4a)(1-a))^{{N \over 2}-1}((1+4a){d(1-a) \over da}+(1-a){d(1+4a) \over da}) \\ &=& {N \over 2}((1+4a)(1-a))^{{N \over 2}-1}(-(1+4a)+4(1-a)) \\ &=& {N \over 2}((1+4a)(1-a))^{{N \over 2}-1}(-8a+3) \end{matrix}$$
+$$\begin{matrix} {dx_{N} \over da} 
+&=& {d \over da}(1+4a)^{N \over 2}(1-a)^{N \over 2}x_{0} \\
+&=& {d \over da}((1+4a)(1-a))^{N \over 2} \\
+&=& {N \over 2}((1+4a)(1-a))^{ {N \over 2}-1}{d \over da}(1+4a)(1-a) \\
+&=& {N \over 2}((1+4a)(1-a))^{ {N \over 2}-1}((1+4a){d(1-a) \over da}+(1-a){d(1+4a) \over da}) \\
+&=& {N \over 2}((1+4a)(1-a))^{ {N \over 2}-1}(-(1+4a)+4(1-a)) \\
+&=& {N \over 2}((1+4a)(1-a))^{ {N \over 2}-1}(-8a+3)
+\end{matrix}$$
 
 뭔가 아직도 복잡하다 기분탓이려니 해라 
 
