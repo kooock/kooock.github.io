@@ -2,7 +2,7 @@
 layout: post
 title: "What is index?"
 excerpt: "this post explains total index that contains kospi and S&P200 and etc."
-modified: 2018-07-31
+modified: 2018-08-01
 comments: true
 category : FinanceEngineering
 tags: [금융공학, 퀀트, 인덱스]
@@ -35,5 +35,21 @@ What is index?
 
 18,000,000원이 된 날과 기준시점의 비율은 $$18,000,000 \over 19,278,000$$ 이며, 이 값은 기준시점의 point를 1로 잡았을때의 point가 된다.
 
-하지만 우리는 기준index point를 1000으로 잡았으므로 해당일의 index는 $${18,000,000 \over 19,278,000} \times 1000 = $$  
+하지만 우리는 기준index point를 1000으로 잡았으므로 해당일의 비트코인 index는 $${18,000,000 \over 19,278,000} \times 1000 = 933.71point$$가 된다.
+
+반면에 이더리움index는 얼마일까? 이더리움의 2018년 1월 1일의 시가는 1,028,000원 이다.
+
+$${760,000 \over 1,028,000} \times 1000 = 739.30point$$로 비교적 비트코인보다 더 하락한 것을 알 수 있다,
+
+이런 식으로 index는 기준을 같게 맞춘 값이라고 할 수 있다.
+
+위의 예시처럼 가격만을 indexing하지 않는다. 
+
+거래량의 번화추이를 알고 싶다면 거래량으로도 가능하며 시가총액, 유통량, 심지어는 변동성까지 indexing 가능하다.
+
+이렇게 indexing을 하는 목적은 얼만큼 시장이 성장했는지 또는 특정 시점과 비교했을때, 어떤 방향으로 흘러가는지를 비교하기 위함이다.
+
+
+
+
 
