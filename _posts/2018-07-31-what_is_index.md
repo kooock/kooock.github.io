@@ -49,7 +49,57 @@ $${760,000 \over 1,028,000} \times 1000 = 739.30point$$로 비교적 비트코�
 
 이렇게 indexing을 하는 목적은 얼만큼 시장이 성장했는지 또는 특정 시점과 비교했을때, 어떤 방향으로 흘러가는지를 비교하기 위함이다.
 
+꼭 index를 톡정종목으로만 산출하라는 법은 없다. 전체적인 시장의 흐름을 이해하고 싶을 때가 있다. 그럴때, 모든 종목 혹은 특정 종목들을 모아서 indexing을 하기도 한다.
 
+이것을 total index 혹은 total market index(종합주가지수)라고 한다.
 
+사장에는 여러가지 total market index가 있다.
+
+ - 다우존스	 
+ - S&P 500	 
+ - 나스닥	 
+ - Russell	 
+ - S&P 500 VIX	 
+ - 캐나다 S&P/TSX	 
+ - 브라질 보베스파	 
+ - S&P/BMV IPC	 
+ - DAX	12,737.05 
+ - 영국 FTSE	 
+ - 프랑스 CAC 
+ - EU Stoxx 50 
+ - 네덜란드 AEX
+ - 스페인 IBEX	 
+ - 이탈리아 FTSE MIB	 
+ - 스위스 SMI
+ - 포르투갈 PSI	 
+ - 벨기에 BEL		 
+ - ATX		 
+ - 스웨덴 OMXS	 
+ - 러시아 MOEX	 
+ - RTSI 지수	 
+ - 폴란드 WIG 20
+ - 헝가리 BUX	 
+ - 터키 BIST
+ - TA 35
+ - 사우디아라비아 Tadawul	 
+ - 닛케이
+ - 호주 S&P/ASX	 
+ - 상하이종합	 
+ - SZSE Component	 
+ - China A50	 
+ - DJ Shanghai
+ - 항셍
+ - 대만 가권 
+ - SET 
+ - 코스피지수	 
+ - 인도네시아 IDX	 
+ - Nifty 50
+ - 인도 센섹스
+ - HNX 30	 
+ - CSE All-Share
+ 
+이 정도가 '주요' 지수이다. 이 외에도 지수는 엄청나게 많다.
+
+이중 몇개만 산출방식을 알오보도록 하자
 
 
