@@ -27,3 +27,4 @@ drunkard walking(취보)라고도 하는데 말 그대로 술취한 사람이 �
 실제로 동전던지기 결과의 그래프를 보도록 하자.
 
 
+![useful image]({{ site.url }}/assets/images/random_walk.png)
