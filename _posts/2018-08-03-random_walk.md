@@ -29,4 +29,3 @@ drunkard walking(취보)라고도 하는데 말 그대로 술취한 사람이 �
 
 ![useful image]({{ site.url }}/assets/images/random_walk.png)
 
-자 어떤가? 주가 그래프 비스무리하지 않은가?
