@@ -8,3 +8,4 @@ category : FinanceEngineering
 tags: [금융공학, 퀀트, 랜덤워크, 브라운운동]
 ---
 
+Random walk
