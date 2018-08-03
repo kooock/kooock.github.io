@@ -28,3 +28,4 @@ drunkard walking(취보)라고도 하는데 말 그대로 술취한 사람이 �
 
 
 ![useful image]({{ site.url }}/assets/images/random_walk.png)
+
