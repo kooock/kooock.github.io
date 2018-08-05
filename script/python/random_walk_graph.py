@@ -11,3 +11,4 @@ def xrange(start, final, interval):
     numbers = []
     while start < final:
         numbers.append(start)
+        start += interval
