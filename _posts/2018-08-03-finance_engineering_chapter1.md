@@ -21,3 +21,4 @@ tags: [금융공학, 퀀트]
 
 금융공학을 부르는 용어들: finance engineering, computational finance, mathematics in finance
 
+
