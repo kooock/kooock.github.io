@@ -19,3 +19,4 @@ tags: [금융공학, 퀀트]
 - 기존에 존재하는 상품 혁신
 - 이러한 과정에 물리학, 화학, 수학, 생물학, 산업공학 등 자연과학 및 공학 이론이 사용되기 때문에 finance + engineering이라고 함
 
+금융공학을 부르는 용어들: finance engineering, computational finance, mathematics in finance
