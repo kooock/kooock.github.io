@@ -23,3 +23,4 @@ tags: [금융공학, 퀀트]
 
 
 금융공학의 의의
+1. 혁신과 창조는 사고의 획기적 도약을 의미한다.(ex: swap,mortgage,zero coupon bond, junk bond)
