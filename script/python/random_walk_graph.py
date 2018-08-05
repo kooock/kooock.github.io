@@ -9,3 +9,4 @@ def draw_graph(x, y,label):
 
 def xrange(start, final, interval):
     numbers = []
+    while start < final:
