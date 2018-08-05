@@ -12,3 +12,4 @@ def xrange(start, final, interval):
     while start < final:
         numbers.append(start)
         start += interval
+    return numbers
