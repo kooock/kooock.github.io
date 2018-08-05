@@ -14,3 +14,4 @@ def xrange(start, final, interval):
         start += interval
     return numbers
 
+def make_graph_x_y(xmin,xmax):
