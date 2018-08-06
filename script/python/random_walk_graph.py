@@ -24,3 +24,4 @@ def make_graph_x_y(xmin,xmax):
             y_point += 1
         else:
             y_point -= 1
+
