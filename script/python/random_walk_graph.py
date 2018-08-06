@@ -29,3 +29,4 @@ def make_graph_x_y(xmin,xmax):
     draw_graph(a, y, "random walk")
 
 
+
