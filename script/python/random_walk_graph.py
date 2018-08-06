@@ -25,3 +25,4 @@ def make_graph_x_y(xmin,xmax):
         else:
             y_point -= 1
 
+        y.append(y_point)
