@@ -16,3 +16,4 @@ def xrange(start, final, interval):
 
 def make_graph_x_y(xmin,xmax):
     a = xrange(xmin, xmax, 1)
+    y_point = 0
