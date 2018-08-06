@@ -19,3 +19,4 @@ def make_graph_x_y(xmin,xmax):
     y_point = 0
     y = []
     for x in a:
+        i = random.randint(0,1)
