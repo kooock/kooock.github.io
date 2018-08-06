@@ -28,3 +28,4 @@ def make_graph_x_y(xmin,xmax):
         y.append(y_point)
     draw_graph(a, y, "random walk")
 
+
