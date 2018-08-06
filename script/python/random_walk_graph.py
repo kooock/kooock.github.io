@@ -30,3 +30,4 @@ def make_graph_x_y(xmin,xmax):
 
 
 
+if __name__ == "__main__":
