@@ -18,3 +18,4 @@ def make_graph_x_y(xmin,xmax):
     a = xrange(xmin, xmax, 1)
     y_point = 0
     y = []
+    for x in a:
