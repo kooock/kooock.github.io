@@ -21,3 +21,4 @@ def make_graph_x_y(xmin,xmax):
     for x in a:
         i = random.randint(0,1)
         if i:
+            y_point += 1
