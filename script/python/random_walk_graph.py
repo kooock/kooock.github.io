@@ -34,3 +34,4 @@ if __name__ == "__main__":
     mplp.xlabel('time')
     mplp.ylabel('point')
     mplp.title('Funcion Graph')
+
