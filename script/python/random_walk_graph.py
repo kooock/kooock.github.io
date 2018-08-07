@@ -36,3 +36,4 @@ if __name__ == "__main__":
     mplp.title('Funcion Graph')
 
     xmin = 0
+    xmax = 100000
