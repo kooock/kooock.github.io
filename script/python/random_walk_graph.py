@@ -40,3 +40,4 @@ if __name__ == "__main__":
 
     make_graph_x_y(xmin,xmax)
 
+    mplp.grid()
