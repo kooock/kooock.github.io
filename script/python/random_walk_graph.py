@@ -35,3 +35,4 @@ if __name__ == "__main__":
     mplp.ylabel('point')
     mplp.title('Funcion Graph')
 
+    xmin = 0
