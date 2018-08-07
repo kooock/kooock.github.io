@@ -38,3 +38,4 @@ if __name__ == "__main__":
     xmin = 0
     xmax = 100000
 
+    make_graph_x_y(xmin,xmax)
