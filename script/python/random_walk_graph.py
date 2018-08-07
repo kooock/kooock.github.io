@@ -33,3 +33,4 @@ def make_graph_x_y(xmin,xmax):
 if __name__ == "__main__":
     mplp.xlabel('time')
     mplp.ylabel('point')
+    mplp.title('Funcion Graph')
