@@ -22,7 +22,7 @@ category: DeveloperSeries
 나는 "선생님 대충 삽시다"를 한 30번 정도 말했으며 그 친구는 "선생님 이렇게 살면 죽어요"를 한 30번 말한거 같다.
 달라도 너무 다른거 같은 우리... 뭐.. 문제없이 살 수 있겠지?!
 
-|[useful image]({{ site.url }}/assets/images/toilet.jpg)|
+|![useful image]({{ site.url }}/assets/images/toilet.jpg)|
 |:--:| 
 |<br>우리집이 이 정돈 아님;;;;|
 

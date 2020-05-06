@@ -12,13 +12,13 @@ category: DeepLearning
 
 오늘 pytorch 튜토리얼을 보다가 묻득 ...
 
-|[useful image]({{ site.url }}/assets/images/Untitled.png)|
+|![useful image]({{ site.url }}/assets/images/Untitled.png)|
 
 어? matrix하고 tensor하고 다른건 알겠는데 뭐가 다른거였더라? 라는 본질적인 의문이 갑자기 들었다. 그래서 폭풍검색을 하며 자료를 찾아나가기 시작했다. 
 
 먼저 위키피디아 
 
-|[useful image]({{ site.url }}/assets/images/Untitled%201.png)|
+|![useful image]({{ site.url }}/assets/images/Untitled%201.png)|
 
 음.....그만 알아보자.
 
@@ -30,13 +30,13 @@ category: DeepLearning
 
 일단은 거기까지 안 상태에서 텐서는 왜 만든 것이며, 어디다가 쓰는 것일까
 
-|[useful image]({{ site.url }}/assets/images/tensor.jpg)|
+|![useful image]({{ site.url }}/assets/images/tensor.jpg)|
 
 아인슈타인 선생님의 장 방정식에도 쓴다고... 그러고 저기 uv(사실 유브이 아님 '뮤뉴'임 ~~적당히 넘어가지~~) 달린 저것들이 metric tensor(측량텐서)인가 뭔가라고 한다.  장 무서워 텐서에 발 못 담그겠다 ~~그만알아보자~~
 
 그리고 
 
-|[useful image]({{ site.url }}/assets/images/_.jpg)|
+|![useful image]({{ site.url }}/assets/images/_.jpg)|
 
 ~~몇마리의 고양이가 죽어나가야 양자역학에서 고양이 이야기를 안할까....~~
 
@@ -44,7 +44,7 @@ category: DeepLearning
 
 그래 뭐..... 알다가도 모르 아니 모르다가도 더 모르겠다. 
 
-|[useful image]({{ site.url }}/assets/images/tensor%201.jpg)|
+|![useful image]({{ site.url }}/assets/images/tensor%201.jpg)|
 
 ## 텐서는 행렬일까
 
@@ -65,7 +65,7 @@ category: DeepLearning
 
 자 백터와 스칼라랑 다른걸 알 수 있는 짤을 소개해주겠다 
 
-|[useful image]({{ site.url }}/assets/images/Untitled%202.png)|
+|![useful image]({{ site.url }}/assets/images/Untitled%202.png)|
 
 이래서 눈치빠른 이과는 안된다니까 
 
@@ -107,7 +107,7 @@ b = b1i + b2j + b3k일때
 
 (i j k는 단위백터다. 즉 성분을 나타낸다)
 
-|[useful image]({{ site.url }}/assets/images/Untitled%203.png)|
+|![useful image]({{ site.url }}/assets/images/Untitled%203.png)|
 
 우린 이런 곱의 형태를 이제 dyad product라고 하겠다. 
 
@@ -131,7 +131,7 @@ b = b1i + b2j + b3k일때
 
 백터는 크가와 방향을 가지고 있다. 예시로 음 뭐가 좋을까....음... 나의 크고 우람한 오이를 가지고 이야기해보겠다. 내가 이 오이를 살포시 들어서
 
-|[useful image]({{ site.url }}/assets/images/Untitled%204.png)|
+|![useful image]({{ site.url }}/assets/images/Untitled%204.png)|
 
 거실에서 방까지 가지고 간다(사실 우리집 원룸이다 암튼) 오이의 아무런 미동도 없이 내가 몸도 틀지 않고 가지고 갔다고 하자. 갑자기 방에서 오이가 커지거나 작아지지 않는다. 그렇다고 몸도 틀지 않았으니 오이의 방향도 바뀌지 않았다. 그렇다 여기서 오이는 크기와 방향이 있는 백터고 난 이 오이를 평행이동 시켰다. 하지만 반대로 생각하면 오이는 가만히 있고 좌표계가 거실에서 방으로 바뀐 것일수도 있다. 하지만 오이의 크기와 방향은 바뀌지 않았다. 그렇다 오이는 rank1짜리 tensor였다 
 
@@ -176,27 +176,27 @@ b = b1i + b2j + b3k일때
 1. 편미분 : 미분하고자 하는 변수 외에 나머지를 상수로 취급한다. 이정도만 일단 알자
 2. 자코비안 행렬 ; 다변수 백터 행렬의 도함수 행렬이라는데 아래 수식을 보자 
 
-    |[useful image]({{ site.url }}/assets/images/Untitled%205.png)|
+    |![useful image]({{ site.url }}/assets/images/Untitled%205.png)|
 
     이런 함수를 미분한다고 해보자
     
-    |[useful image]({{ site.url }}/assets/images/Untitled%206.png)|
+    |![useful image]({{ site.url }}/assets/images/Untitled%206.png)|
 
     여기서 x와 y에 대한 각 미분에서 이걸 체인룰로 표현하면 이런식으로 나오게 되는데 
 
     자 그럼 각 미분변수 사이에는 무슨 관계가 있을까
 
-    |[useful image]({{ site.url }}/assets/images/Untitled%207.png)|
+    |![useful image]({{ site.url }}/assets/images/Untitled%207.png)|
 
     dt만 없애면 된다. 자 이걸 행렬식으로 붙이면 
 
-    |[useful image]({{ site.url }}/assets/images/Untitled%208.png)|
+    |![useful image]({{ site.url }}/assets/images/Untitled%208.png)|
 
     여기서 저 가운데 뚱뚱한 2x2짜리 행렬을 자코비안 행렬이라고 한다. 그렇다 du와 dv를 dx와 dy로 만들어줄 수 있는 행렬인것이다.  그래서 도함수 행렬이라고 하는거 같다. 
 
 3. gradient : 스칼라장에서의 기울기, 결국엔 각 부분의 기울기라고 볼 수 있다. 
 
-    |[useful image]({{ site.url }}/assets/images/Untitled%209.png)|
+    |![useful image]({{ site.url }}/assets/images/Untitled%209.png)|
 
     그 왜 우리 gradieTent descent하는 그거 
 
