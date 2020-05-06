@@ -36,7 +36,7 @@ category: DeepLearning
 
 그리고 
 
-![useful image]({{ site.url }}/assets/images/_.jpg)
+![useful image]({{ site.url }}/assets/images/quantum_cat.jpg)
 
 ~~몇마리의 고양이가 죽어나가야 양자역학에서 고양이 이야기를 안할까....~~
 
