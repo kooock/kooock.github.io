@@ -22,8 +22,9 @@ category: DeveloperSeries
 나는 "선생님 대충 삽시다"를 한 30번 정도 말했으며 그 친구는 "선생님 이렇게 살면 죽어요"를 한 30번 말한거 같다.
 달라도 너무 다른거 같은 우리... 뭐.. 문제없이 살 수 있겠지?!
 
-![useful image]({{ site.url }}/assets/images/toilet.jpg)
-*<br>우리집이 이 정돈 아님;;;;*
+|[useful image]({{ site.url }}/assets/images/toilet.jpg)|
+|:--:| 
+|<br>우리집이 이 정돈 아님;;;;|
 
 ### 2. 개발자들은 다 너 같더라
 그래서 입성기념 겸 화장실 청소 해준 겸 회와 초밥을 사주었다. (당신의 노동력, 회로 대체되었다~이말이야)
