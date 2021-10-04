@@ -16,7 +16,7 @@ comments: true
 
 이 글은 [Yingbo Wang](https://www.linkedin.com/in/yingbo-wang-86aa3027/), [Kevin Yang](https://www.linkedin.com/in/ruiqinyang/)가 [에어비엔비 기술블로그에 작성한 글](https://medium.com/airbnb-engineering/the-airflow-smart-sensor-service-221f96227bcb)을 임의로 번역한 것입니다.
 
-[https://miro.medium.com/max/1400/0*3r30u7rnBhR7BJSc](https://miro.medium.com/max/1400/0*3r30u7rnBhR7BJSc)
+![https://miro.medium.com/max/1400/0*3r30u7rnBhR7BJSc](https://miro.medium.com/max/1400/0*3r30u7rnBhR7BJSc)
 
 # Introduction
 
@@ -32,7 +32,7 @@ Airflow는 프로그래밍 방식으로 작성, 스케줄링, 모니터링 하�
 
 sensor 또는 sensor task는 특정 기준을 충족할 때까지 실행되는 특수한 operator 유형이다. 이 기준은 HDFS 또는 S3에 랜딩하는 파일이거나, 하이브에 나타나는 파티션이거나, 다른 외부 task의 성공여부, 또는 하루 중 특정시간인 경우일 수 있다.
 
-[https://miro.medium.com/max/700/0*HPMY9cRlDg7_Y7zj](https://miro.medium.com/max/700/0*HPMY9cRlDg7_Y7zj)
+![https://miro.medium.com/max/700/0*HPMY9cRlDg7_Y7zj](https://miro.medium.com/max/700/0*HPMY9cRlDg7_Y7zj)
 
 **Figure 1. The lifespan of a sensor task**
 
@@ -60,7 +60,7 @@ sensor task가 실행할 때, poke라고 부르는 함수가 보통 3분마다 �
 
 Smart Sensor 서비스의 핵심 아이디어는 각 task마다 개별 process를 사용하는 대신에 장기 실행되는 task들을 일괄적으로 실행시키는 중앙화된 프로세스를 사용하는 것입니다.
 
-[https://miro.medium.com/max/700/0*H6QTUtYBpgbn2ijm](https://miro.medium.com/max/700/0*H6QTUtYBpgbn2ijm)
+![https://miro.medium.com/max/700/0*H6QTUtYBpgbn2ijm](https://miro.medium.com/max/700/0*H6QTUtYBpgbn2ijm)
 
 **Figure 2. Sensors before and after enabling smart sensor**
 
@@ -72,7 +72,7 @@ Smart Sensor 서비스를 사용하면 sensor task는 두가지 과정으로 실
 
 **Smart Sensor는 sensor task shards를 정의하여 중복되는 작업을 제거하고 작업 부하의 균형을 맞춥니다.**  동시에 실행되는 sensor task가 많을 수 있습니다. 그리고 이 job들을 짧은 주기로 실행하기 위해 여러 개의 Smart Sensor task가 있을 것입니다. Smart Sensor에 sensor task가 할당되는 방법은 이 시스템을 설계할 때 우리의 도전과제 중에 하나였습니다. 우리는 모든 Smart Sensor task의 부하를 균형 있게 할당하기 위해 노력했습니다. 동시에 여러개의 poke 함수가 동일 대상에 대해 실행되지 않도록 중복된 sensor task가 반드시 같은 Smart Sensor에 할당되어야만 했습니다. 
 
-[https://miro.medium.com/max/700/0*fM_bvm_cykKVz7qd](https://miro.medium.com/max/700/0*fM_bvm_cykKVz7qd)
+![https://miro.medium.com/max/700/0*fM_bvm_cykKVz7qd](https://miro.medium.com/max/700/0*fM_bvm_cykKVz7qd)
 
 **Figure 3. Deduplicating tasks by shardcode**
 
@@ -92,7 +92,7 @@ Smart Sensor 서비스를 사용하거나 사용하지 않게 하는 것은 간�
 
 Smart sensor의 첫 버전을 개발할 때는 AirBnB는 피크시간에 동시에 수행되는 task의 60%이상을 줄일 수 있었습니다.  또한 동작하는 sensor task의 80%를 줄였습니다. 센서에 대한 프로세스 슬롯은 2만에서 80개로 줄어들었습니다. 실행 중인 task가 상당히 줄었기 때문에 database load 또한 크게 줄어들었습니다.
 
-[https://miro.medium.com/max/700/0*lkiBWjq8_ezvYC-e](https://miro.medium.com/max/700/0*lkiBWjq8_ezvYC-e)
+![https://miro.medium.com/max/700/0*lkiBWjq8_ezvYC-e](https://miro.medium.com/max/700/0*lkiBWjq8_ezvYC-e)
 
 **Figure 4. Number of running tasks after Smart Sensor deployed**
 
