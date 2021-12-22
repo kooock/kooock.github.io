@@ -31,7 +31,7 @@ transformer는 어텐션 메커니즘의 개념을 사용합니다. 어텐션이
 
 여기서 왜 우리는 어텐션이 필요할까요 CNN도 특징 추출에서는 꽤 성능이 좋잖아요?
 
-![https://miro.medium.com/max/500/0*VH9nQ75XU4XhXbj3.png](https://miro.medium.com/max/500/0*VH9nQ75XU4XhXbj3.png)
+![Untitled]({{ site.url }}/assets/images/20211222_01_000.png)
 
 
 CNN의 경우에는 두 이미지가 거의 같습니다. CNN은 서로 다른 feature끼리의 상대위치를 인코딩 하지 못합니다. 이러한 feature의 조합을 인코딩 하기 위해서는 큰 필터들이 필요합니다. 예를 들어 “코와 입 위에 있는 눈”이라는 정보를 인코딩 하려면 큰 필터들이 필요해집니다.
