@@ -182,7 +182,6 @@ PSA에서 우리는 어텐션 가중치가 **relative positional encodings(r)**�
 
 ![https://miro.medium.com/max/313/1*SSdJYIx4W5hbdoO-bJt-fw.png](https://miro.medium.com/max/313/1*SSdJYIx4W5hbdoO-bJt-fw.png)
 
-![https://miro.medium.com/max/172/1*-JlGdWZQ1Y4qeUMAWdn-GA.png](https://miro.medium.com/max/172/1*-JlGdWZQ1Y4qeUMAWdn-GA.png)
 
 학습가능한 **positional encoding이 있는** 멀티 헤드 PSA 레이어는 모든 컨볼루션 레이어를 표현할 수 있습니다.
 
