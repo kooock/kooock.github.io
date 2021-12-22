@@ -16,8 +16,6 @@ comments: true
 
 # Why Transformers are Slowly Replacing CNNs in Computer Vision?
 
-source: https://becominghuman.ai/transformers-in-vision-e2e87b739feb
-
 Transformer에 들어가기 앞서, 왜 연구자들이 MLP나 CNN, RNN 같은 것들이 있음에도 불구하고 transformer와 같은 모델을 구성하는지 이해할 필요가 있습니다.
 
 - transformer는 원래 언어번역을 수행하기 위해 설계되었습니다. transformer는 LSTM같은 RNN류와 비교했을 때, 인풋 시퀀스 요소들 간의 긴 의존성을 모델링할 수 있고 병렬처리를 지원합니다.
