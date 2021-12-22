@@ -23,7 +23,7 @@ Transformer에 들어가기 앞서, 왜 연구자들이 MLP나 CNN, RNN 같은 �
 
 모두가 단 하나의 보편적인 모델을 사용해서 여러 테스크의 문제를 정확도와 속도를 유지한 채로 풀고싶어 합니다. 범용 function approximator(함수에 근사시키는 것)인 MLP와 마찬가지로 transformer 모델은 sequence to sequence 함수에 대한 보편적인 approximator입니다.
 
-transformer는 어텐션 메커니즘의 개념을 사용합니다. 어텐션이 무엇인지 알아보고 셀프 이텐션 메커니즘을 간략히 알아보자
+transformer는 어텐션 메커니즘의 개념을 사용합니다. 어텐션이 무엇인지 알아보고 셀프 이텐션 메커니즘을 간략히 알아봅시다.
 
 # Attention Mechanism
 
@@ -36,7 +36,7 @@ transformer는 어텐션 메커니즘의 개념을 사용합니다. 어텐션이
 
 CNN의 경우에는 두 이미지가 거의 같습니다. CNN은 서로 다른 feature끼리의 상대위치를 인코딩 하지 못합니다. 이러한 feature의 조합을 인코딩 하기 위해서는 큰 필터들이 필요합니다. 예를 들어 “코와 입 위에 있는 눈”이라는 정보를 인코딩 하려면 큰 필터들이 필요해집니다.
 
-이미지 내에서  **long-range dependencies(광범위 종속성)**를 추적하려면 **Large receptive fields(큰 수용 필드)가 필요합니다.** convolution kernel의 크기 증가는 네트워크의 표현능력을 증가시킬 수 있으나 동시에 local convolution 구조에서 얻을 수 있는 컴퓨팅 및 통계 효율이 사라져버린다.
+이미지 내에서  **long-range dependencies(광범위 종속성)**를 추적하려면 **Large receptive fields(큰 수용 필드)가 필요합니다.** convolution kernel의 크기 증가는 네트워크의 표현능력을 증가시킬 수 있으나 동시에 local convolution 구조에서 얻을 수 있는 컴퓨팅 및 통계 효율이 사라져버립니다.
 
 어텐션 메커니즘의 일종인 셀프 어텐션 모듈은 CNN과 함께 long-range dependencies를 컴퓨팅 및 통계 효율에 손상을 주지 않고 모델링하는데 도움이 됩니다.
 
