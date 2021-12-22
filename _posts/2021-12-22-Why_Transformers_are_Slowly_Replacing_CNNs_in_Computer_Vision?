@@ -101,35 +101,35 @@ transformer 모델은 NLP task에서 중요한 기계번역 문제를 해결하�
 
  이런 위치정보를 토큰에 집어넣기 위해서 positional encoding을 사용합니다. 맨 처음 가장 간단하게 생각할 수 있는 postional encoding은 그냥 자리마다 increasing number를 하나씩 주는 겁니다. 
 
-![Untitled](Why%20Transformers%20are%20Slowly%20Replacing%20CNNs%20in%20Comp%207070e6dc579a4ee39c0477f0e3b6701a/Untitled.png)
+![Untitled]({{ site.url }}/assets/images/20211222_01_001.png)
 
 그 방식의 문제는 각 자리 토큰 간의 숫자가 너무 크게 차이가 나게 되어 학습시 gradient explosion등으로 학습이 불안정해질 수 있습니다. 그러면 0~1 사이로 normalizing 하면 되지 라고 생각할 수 있습니다. 
 
-![Untitled](Why%20Transformers%20are%20Slowly%20Replacing%20CNNs%20in%20Comp%207070e6dc579a4ee39c0477f0e3b6701a/Untitled%201.png)
+![Untitled]({{ site.url }}/assets/images/20211222_01_002.png)
 
 그런데 문제가 같은 자리에는 같은 포지셔널 인코딩 값이 들어와야 하는건데 시퀀스 최대길이 값이 다르면 같은 자리인데도 다른 값을 받게 됩니다. 최대 길이 11인 시퀀스에서는 3번째 자리가 0.3이고 최대 길이가 6인 시퀀스에서는 3번째 자리가 0.6입니다.  그러면 이런 문제를 해결하기 위해서 바이너리 백터를 이용한다면 일정한 자리마다 고유값을 부여할 수 있습니다. 
 
-![Untitled](Why%20Transformers%20are%20Slowly%20Replacing%20CNNs%20in%20Comp%207070e6dc579a4ee39c0477f0e3b6701a/Untitled%202.png)
+![Untitled]({{ site.url }}/assets/images/20211222_01_003.png)
 
 하지만 이 방식의 문제는 이산적 함수의 출력이기에 (0,0) ~ (0,1) 사이의 거리는 1인데 (0,1) ~ (1,0) 사이의 거리는 루트2로 각 자리 사이마다 거리가 달라지게 되어 버립니다. 하지만 각 자리가 거리의 차리를 주는 의미를 가져선 안되므로 문제가 됩니다. 이는 고차원으로 갈 수록 더욱 뚜렸해지는 문제입니다. 
 
 그래서 연속적인 바이너리 백터를 찾아야만 했습니다. 0~1사이에서 움직이며 연속적이고 frequency의 차이로 인코딩을 할 수 있는 것은 sin입니다. 
 
-![Untitled](Why%20Transformers%20are%20Slowly%20Replacing%20CNNs%20in%20Comp%207070e6dc579a4ee39c0477f0e3b6701a/Untitled%203.png)
+![Untitled]({{ site.url }}/assets/images/20211222_01_004.png)
 
 이렇게 했을때의 문제는 dim3의 경우 반바퀴를 돌면 제자리로 돌아오는데 반바퀴를 돈 경우와 첫번째 스텝의 거리가 매우 가까워집니다. 즉 같은 자리에서 순환하는 닫힌 형태인데 이렇게 되면 마지막 자리와 첫번째 자리가 가까워져버리는 문제가 발생합니다. 그리고 또 한가지 문제는 스텝 인덱스에 따른 positional encoding 변환을 반영하지 못한다는 것인데 즉 다른 인덱스로부터의 선형변환으로써 표현되지 못한다는 의미입니다. $PE(x + \nabla x) = PE(x)\cdot T(\nabla x)$  **를 만족시켜야 하는데 만족시킬 수 있는 $T(\nabla x)$가 없다는 것입니다.  이 문제는 회전변환에서 아이디어를 얻어서 해결합니다. 
 
-![Untitled](Why%20Transformers%20are%20Slowly%20Replacing%20CNNs%20in%20Comp%207070e6dc579a4ee39c0477f0e3b6701a/Untitled%204.png)
+![Untitled]({{ site.url }}/assets/images/20211222_01_005.png)
 
 이렇게 얻어진 $PE(x)$ 행렬을 sin과 cos함수를 번갈아가면서  구성합니다.
 
-![Untitled](Why%20Transformers%20are%20Slowly%20Replacing%20CNNs%20in%20Comp%207070e6dc579a4ee39c0477f0e3b6701a/Untitled%205.png)
+![Untitled]({{ site.url }}/assets/images/20211222_01_006.png)
 
 그리고 선형변환 $T(\nabla x)$ 는 다음과 같이 구성이 가능합니다.
 
-![Untitled](Why%20Transformers%20are%20Slowly%20Replacing%20CNNs%20in%20Comp%207070e6dc579a4ee39c0477f0e3b6701a/Untitled%206.png)
+![Untitled]({{ site.url }}/assets/images/20211222_01_007.png)
 
-![Untitled](Why%20Transformers%20are%20Slowly%20Replacing%20CNNs%20in%20Comp%207070e6dc579a4ee39c0477f0e3b6701a/Untitled%207.png)
+![Untitled]({{ site.url }}/assets/images/20211222_01_008.png)
 
 # Vision Transformer
 
