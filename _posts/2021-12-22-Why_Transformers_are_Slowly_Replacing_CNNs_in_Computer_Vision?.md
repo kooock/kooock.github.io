@@ -33,6 +33,7 @@ transformer는 어텐션 메커니즘의 개념을 사용합니다. 어텐션이
 
 ![https://miro.medium.com/max/500/0*VH9nQ75XU4XhXbj3.png](https://miro.medium.com/max/500/0*VH9nQ75XU4XhXbj3.png)
 
+
 CNN의 경우에는 두 이미지가 거의 같습니다. CNN은 서로 다른 feature끼리의 상대위치를 인코딩 하지 못합니다. 이러한 feature의 조합을 인코딩 하기 위해서는 큰 필터들이 필요합니다. 예를 들어 “코와 입 위에 있는 눈”이라는 정보를 인코딩 하려면 큰 필터들이 필요해집니다.
 
 이미지 내에서  **long-range dependencies(광범위 종속성)**를 추적하려면 **Large receptive fields(큰 수용 필드)가 필요합니다.** convolution kernel의 크기 증가는 네트워크의 표현능력을 증가시킬 수 있으나 동시에 local convolution 구조에서 얻을 수 있는 컴퓨팅 및 통계 효율이 사라져버린다.
