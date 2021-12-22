@@ -71,7 +71,7 @@ transformer는 이미 NLP 도메인에서  LSTM을 대체하였습니다. 그렇
 
 # The Transformer Model
 
-![https://miro.medium.com/max/700/0*6IRI1702tSRvY04a.png](https://miro.medium.com/max/700/0*6IRI1702tSRvY04a.png)
+![Untitled]({{ site.url }}/assets/images/20211222_01_009.png)
 
 transformer 모델은 NLP task에서 중요한 기계번역 문제를 해결하기 위해 최초로 제안되었습니다. 이때 제안된 transformer 모델은 인코더 디코더 구조를 가집니다. 위 사진에서 왼쪽은 인코더 오른쪽은 디코더를 나타냅니다. 보시는 것과 같이 인코더와 디코더 모두 셀프 어텐션 레이어와 션형 레이어, residual connection을 가집니다.
 
